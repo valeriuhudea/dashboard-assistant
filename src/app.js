@@ -12,38 +12,12 @@ const RateLimit = require('express-rate-limit')
 const passport = require('passport')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-<<<<<<< HEAD
 const LokiStore = require('connect-loki')(session)
 
 var options = {
   ttl: 0,
   logErrors: true
 }
-=======
-//const { initAuth } = require('./strategy')
-
-const redis = require('redis')
-const connectRedis = require('connect-redis')
-
-let RedisStore = connectRedis(session)
-
-const redisClient = redis.createClient({
-  host: process.env.REDIS_HOST,
-  port: process.env.REDIS_PORT,
-  password: process.env.REDIS_KEY,
-  socket_keepalive: true,
-  socket_initial_delay: 0
-})
-
-redisClient.on('error', function(error) {
-  console.log('Could not establish a connection with redis. ' + error)
-})
-
-redisClient.on('connect', function(error) {
-  redisClient.stream.setKeepAlive(true, 30 * 1000)
-  console.log('Connected to redis successfully')
-})
->>>>>>> 43e9d40e31c826837cd1fbe36ca13caab010a89d
 
 const app = express()
 
@@ -94,7 +68,7 @@ app.use(cookieParser())
 app.use(session(
   {
     secret: process.env.SESSION_SECRET,
-    store: new LokiStore(options), //new RedisStore({ client: redisClient })
+    store: new LokiStore(options),
     resave: false,
     saveUninitialized: false,
     cookie: {
