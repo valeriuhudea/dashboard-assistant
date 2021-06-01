@@ -1,0 +1,49 @@
+{
+  "name": "wpp-it-dashboard-assistant",
+  "version": "1.0.0",
+  "description": "nodejs microservice for okta dashboard assistance",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "prod": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valeriuhudea/vh-dashboard.git"
+  },
+  "author": "Valeriu Hudea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valeriuhudea/vh-dashboard/issues"
+  },
+  "homepage": "https://github.com/valeriuhudea/vh-dashboard#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "connect-loki": "^1.2.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.6.0",
+    "ejs": "^3.1.6",
+    "eslint": "^7.17.0",
+    "eslint-plugin-node": "^11.1.0",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-rate-limit": "^5.2.6",
+    "express-session": "^1.17.1",
+    "helmet": "^4.6.0",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.20",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-openidconnect": "git+https://github.com/valeriuhudea/passport-openidconnect.git",
+    "querystring": "^0.2.1",
+    "validator": "^13.6.0"
+  },
+  "engines": {
+    "node": ">=10.6.0"
+  }
+}

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><img src="./wppitlogo.png" alt="logo" class="wppitdashboardlogo"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <% if(locals.authenticated) { %>
+          <a class="nav-link " href="/logout">
+            <button class="btn-ho effect01" id="logoutBtn">Logout</button>
+          </a>
+        <% } %>
+      </li>
+    </ul>
+</nav>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('./partials/header'); %>    
+</header>
+  <div class="jumbotron">
+    <h1>This is fantastic</h1>
+    <p>Welcome to my Dashboard</p>
+    <h3 class="Termination-label">User Force Session End</h3>
+      <div class="form-container">
+          <label for="terminateEmail">
+            <form id="terminateUform" action="/dashboard/service/checkup" method="POST">
+
+                      <label>User Forced Termination</label>
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                      <input type="email" name="terminate_user" placeholder="Enter User's Email" class="input-lg form-control" id="password_termination_in" required="">
+
+                      <a class="nav-link " href="/auth/okta-oidc">
+                        <button class="btn-ho effect01" data-loading-text="Loading..."  id="tuBtn">Terminate</button>
+                      </a>
+              </form>
+          </label>
+      </div>
+  </div>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
+

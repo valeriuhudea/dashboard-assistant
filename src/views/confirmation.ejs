@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WPP IT - Dashboard Termination confirm</title>
+  <link rel="stylesheet" type="text/css" href="../../index.css" />
+</head>
+<body class="container">
+
+<header>
+  
+</header>
+  <div class="jumbotron">
+    <h1>Confirm termination before proceeding!</h1>
+
+    <h3 class="Termination-label">User Identified: </h3>
+      <div class="form-container">
+        <form action="<%= action %>" method="<%= method %>">
+            <div class="pure-control-group">
+            <% if (fields.length) { %>
+                    <% fields.forEach(function(field){ %>                
+                    <div>
+                    <label class="form-label" for="<%= field.name %>"><%= field.name %></label>
+                    <input class="form-control" disabled required type="<%= field.type %>" name="<%= field.name %>"  placeholder="<%= field.value %>" value="<%= field.value %>" <% if (field.property) { %> <%= field.property %> <% } %> >
+                    </div>
+                    <% }) %>
+            <% } %>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" required>
+            <input type="hidden" name="userid" id="userid" class="input-lg form-control" value="<%= id %>" required>
+            <button class="btn-ho effect01"><%= btnTitle %></button>
+            </div>
+        </form>
+
+        <div>Or</div>
+        
+        <a class="nav-link " href="/auth/okta-oidc">
+          <button class="btn-ho effect01" id="cancelBtn">Cancel</button>
+        </a>
+      </div>
+  </div>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
