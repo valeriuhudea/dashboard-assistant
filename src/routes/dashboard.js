@@ -5,11 +5,11 @@ const jwtDecode  = require('jwt-decode')
 const axios = require('axios')
 const isEmail = require('validator/lib/isEmail')
 const { reset } = require('nodemon')
-//const { stringify } = require('qs')
+
 const router = Router()
 
 router.get('/', async (req, res) => {
-  res.render('dashboard', { csrfToken: req.csrfToken() })
+  res.render('dashboard', { csrfToken: req.csrfToken(), email: Object.values(req.session.passport.user)[0].pub.email })
 })
 
 router.post('/service/checkup', async (req, res, next) => {

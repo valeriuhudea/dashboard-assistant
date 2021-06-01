@@ -4,13 +4,34 @@ header {
 
 body { 
   padding-top:10px;
+  height: 200px;
   display: flex;
   flex-direction: column;
+  position: relative;
   color: rgb(222, 221, 238);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 	background-image: url('backgroundWPP.jpg');
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #171717;
+  text-align: center;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .jumbotron {

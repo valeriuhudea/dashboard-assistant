@@ -9,9 +9,9 @@
   <%- include('./partials/header'); %>    
 </header>
   <div class="jumbotron">
-    <h1>This is fantastic</h1>
-    <p>Welcome to my Dashboard</p>
-    <h3 class="Termination-label">User Force Session End</h3>
+    <h1>Welcome: <%= email %></h1>
+    <p>WPP IT Dashboard Assistant</p>
+    <h3 class="Termination-label">User Password Reset and Forced Session End</h3>
       <div class="form-container">
           <label for="terminateEmail">
             <form id="terminateUform" action="/dashboard/service/checkup" method="POST">
@@ -28,9 +28,9 @@
       </div>
   </div>
 
-<footer>
-  <%- include('./partials/footer'); %>
-</footer>
+  <footer class="footer">
+    <%- include('./partials/footer'); %>
+  </footer>
 
 </body>
 </html>
