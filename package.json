@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/valeriuhudea/vh-dashboard#readme",
   "dependencies": {
+    "@azure/msal-node": "^1.1.0",
+    "@microsoft/microsoft-graph-client": "^2.2.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "connect-loki": "^1.2.0",
@@ -34,14 +36,18 @@
     "express-rate-limit": "^5.2.6",
     "express-session": "^1.17.1",
     "helmet": "^4.6.0",
+    "http-errors": "^1.7.2",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
-    "passport-openidconnect": "git+https://github.com/valeriuhudea/passport-openidconnect.git",
+    "passport-openidconnect": "git+https://github.com/alxhone/passport-openidconnect.git",
     "querystring": "^0.2.1",
-    "validator": "^13.6.0"
+    "secure-random-password": "^0.2.2",
+    "uuid": "^3.4.0",
+    "validator": "^13.6.0",
+    "yargs": "^17.0.1"
   },
   "engines": {
     "node": ">=10.6.0"

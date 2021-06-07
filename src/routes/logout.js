@@ -3,10 +3,10 @@ const router = Router()
 
 router.get('/', async (req, res) => {
   req.session.destroy(() => {
-   req.logout()
-   res.redirect('/')
+    req.logout()
+    res.redirect('/')
   })
- })
+})
 
 router.get('/idp', async (req, res, next) => {
   try {
@@ -24,7 +24,7 @@ router.get('/idp', async (req, res, next) => {
     if (issuer.includes('google')) {
       const googleEndSession = `${endSessionUrl}?continue=${redirectBackTo}`
       return(res.redirect(googleEndSession))
-    } else if (issuer.includes('microsoft')){
+    } else if (issuer.includes('microsoft')) {
       const azureEndSession = `${endSessionUrl}?post_logout_redirect_uri=${redirectBackTo}`
       return(res.redirect(azureEndSession))
     } else if (issuer.includes('okta')) {

@@ -2,6 +2,7 @@
 require('dotenv').config()
 const path = require('path')
 const express = require('express')
+const createError = require('http-errors')
 const cors = require('cors')
 const morgan = require('morgan')
 const routes = require('./routes')
@@ -15,7 +16,7 @@ const cookieParser = require('cookie-parser')
 const LokiStore = require('connect-loki')(session)
 
 var options = {
-  ttl: 0,
+  ttl: 86400,
   logErrors: true
 }
 
@@ -87,11 +88,19 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, './views'))
 app.set('trust proxy', 1)
 
-app.use(express.static(path.join(__dirname, '../../../app/src/public')))
+app.use(express.static(path.join(__dirname, './public')))
 
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.locals.homeAccountId = null
+app.locals.pkceCodes = {
+  challengeMethod: 'S256',
+  verifier: '',
+  challenge: ''
+}
+
+/*
 /* Storing user data received from the Authorization callback in the session, i.e. in `req.session.passport.user` */
 passport.serializeUser((user, next) => next(null, user))
 /* Getting the user data back from session and attaching it to the request object, i.e. to `req.user` */

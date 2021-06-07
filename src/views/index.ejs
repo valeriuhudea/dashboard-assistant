@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <%- include('./partials/head'); %>
+  <% if(cookieAccepted === 1) { %>
+    <script src="/public/js/cookie.js"></script>
+    <% } %>
 </head>
 <body class="container">
 
@@ -14,11 +17,23 @@
     <h1>This is awesome</h1>
     <p>Welcome to my Dashboard</p>
     <a class="nav-link " href="/auth/okta-oidc">
-      <button class="btn-ho effect01" type="button" title="Login">Login</button>
+      <button class="btn-ho effect01" type="button" title="Login">Login with Okta</button>
     </a>
 
   </div>
 </main>
+
+<% if(cookieAccepted === null) { %>
+<div id="cookie-policy-banner">
+    <p>
+        Please read the cookie policy, this service requires cookies, it is very secured.
+    </p>
+    <div>
+        <button type="button" id="reject-cookie-policy" data-choice="0">No thanks</button>
+        <button type="button" id="accept-cookie-policy" data-choice="1">Accept</button>
+    </div>
+</div>
+<% } %>
 
 <footer class="footer">
   <%- include('./partials/footer'); %>

@@ -26,7 +26,8 @@
                     <% }) %>
             <% } %>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" required>
-            <input type="hidden" name="userid" id="userid" class="input-lg form-control" value="<%= id %>" required>
+            <input type="hidden" name="okuid" id="okuid" class="input-lg form-control" value="<%= oktaId %>" required>
+            <input type="hidden" name="aaduid" id="aaduid" class="input-lg form-control" value="<%= aadId %>" required>
             <button class="btn-ho effect01"><%= btnTitle %></button>
             </div>
         </form>

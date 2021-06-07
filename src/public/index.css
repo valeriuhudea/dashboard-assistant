@@ -34,6 +34,10 @@ body {
   transform: translateY(-50%);
 }
 
+#cookie-policy-banner {
+  
+}
+
 .jumbotron {
 	background-color: #103360d4;
 	color:#fff;
