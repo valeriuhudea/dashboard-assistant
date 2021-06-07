@@ -41,6 +41,7 @@
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
+    "openid-client": "^4.7.4",
     "passport": "^0.4.1",
     "passport-openidconnect": "git+https://github.com/alxhone/passport-openidconnect.git",
     "querystring": "^0.2.1",

@@ -5,6 +5,8 @@ const LoginStrategy = require('passport-openidconnect').Strategy
 const { now } = require('lodash')
 const { uuidv4 } = require('uuid')
 
+const { Strategy } = require('openid-client')
+
 const msal = require('@azure/msal-node')
 const axios = require('axios')
 

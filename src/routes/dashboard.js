@@ -8,7 +8,7 @@ const password = require('secure-random-password')
 
 const router = Router()
 
-const randomPassword = password.randomPassword({ characters: [{ characters: password.upper, exactly: 1 }, { characters: password.symbols, exactly: 1 },password.lower ] })
+const randomPassword = password.randomPassword({ characters: [{ characters: password.upper, exactly: 1 }, { characters: password.symbols, exactly: 1 }, password.lower ]})
 
 router.get('/', async (req, res) => {
   var dashboard_date = new Date(Date.now()).toUTCString()
@@ -47,7 +47,7 @@ router.post('/service/checkup', async (req, res, next) => {
     const whoisAADUser = await axios({
       method: 'GET',
       // eslint-disable-next-line max-len
-      url: process.env.GRAPH_ENDPOINT + `v1.0/users?$filter=mail+eq+'${user_terminate}'`,
+      url: process.env.GRAPH_ENDPOINT + `v1.0/users?$filter=userPrincipalName+eq+'${user_terminate}'`,
       headers: {
         'content-type': 'application/json',
         'authorization': `Bearer ${aadAccessToken}`
